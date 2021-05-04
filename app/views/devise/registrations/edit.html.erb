@@ -36,13 +36,13 @@
         <div class="field">
           
           <%= f.text_field :first_name %>
-          <%= f.label :first_name %>
+          <%= f.label "Ім'я"%>
         </div>
 
         <div class="field">
           
           <%= f.text_field :last_name %>
-          <%= f.label :last_name %>
+          <%= f.label "Прізвище"%>
         </div>
 
         <div class="field">
@@ -58,22 +58,22 @@
         <div class="field">
           
           <%= f.password_field :password, autocomplete: "new-password" %>
-          <%= f.label :password %>
+          <%= f.label "Новий пароль" %>
           <% if @minimum_password_length %>
           <br />
-          <em><%= @minimum_password_length %> characters minimum</em>
+          <em><%= @minimum_password_length %> мінімальна кількість символів</em>
           <% end %>
         </div>
 
         <div class="field">
           
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-          <%= f.label :password_confirmation %>
+          <%= f.label "Підтвердження паролю" %>
         </div>
 
 
         <div class="field">
-          <%= f.label :description%>
+          <%= f.label "Про себе:"%>
           <%= f.text_area :description, class: 'form-control', rows: "3" %>
         </div>
 
@@ -83,20 +83,20 @@
         <div class="field">
           
           <%= f.password_field :current_password, autocomplete: "current-password" %>
-          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+          <%= f.label "Актуальний пароль" %> <i>(потрібен для підтвердження змін)</i><br />
         </div>
 
         <div class="actions">
-        <%= f.submit "Update"%>
+        <%= f.submit "Оновити інформацію"%>
         </div>
         <% end %>
       </div>
 
       <div class="col-4 pt-1" style="text-align: right;">
         <h3>Cancel my account</h3>
-        <%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+        <%= button_to "Видалити мій акаунт", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
         </br>
-        <%= link_to "Back", :back , {:style=>'text-decoration:none;', :class => "btn btn-success"}%>
+        <%= link_to "Попередня сторінка", :back , {:style=>'text-decoration:none;', :class => "btn btn-success"}%>
       </div>
     </div>
   </div>
