@@ -1,0 +1,58 @@
+<style>
+.aaa{
+  font-size:23px;
+height: 100%;
+opacity: 0.46;
+border-radius: 10px;
+background: #8E90A6;
+outline-width: 0;}
+</style>
+
+
+<div class="pt-5" style='text-align: center'>
+<h2 class="pt-5" style="font-size: 95px; color: black;"><strong><span style="color: #000000;">Sign</span><span style="color: #018c4b;">Up</span></strong></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <!-- !!!!!!!!!!!!!!!!!CUT!!!!!!!!!!!!!!!!!!!!!!! -->
+  <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+  <div class="field">  
+  <%= f.label :first_name%></br>    
+      <%= f.text_field :first_name , autocomplete: "first name", class: 'aaa' %>
+      
+  </div>
+
+  <div class="field">
+      <%= f.label :last_name%></br>   
+    <%= f.text_field :last_name , autocomplete: "last name", class: 'aaa'%>
+  
+  </div>
+
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'aaa' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: 'aaa' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'aaa' %>
+  </div>
+  <br>
+  <%= f.select :role, User.roles.keys.to_a, :prompt => 'Select', class: 'nav-link dropdown-toggle' %>
+  <div class="actions pt-3">
+    <%= f.submit "Sign up", class: 'btn btn-success' %>
+  </div>
+<% end %>
+<%= render "devise/shared/links" %>
+</div>  
+
+

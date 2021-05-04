@@ -1,0 +1,25 @@
+<div class="pt-5" style="text-align: center;">
+  <h4> THIS 200 IQ DESIGN WILL BE CHANGED SOON </h4>
+<%= form_with(model: task) do |form| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+        <% task.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+    <%= form.label :file %>
+    <%= form.file_field :file %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
