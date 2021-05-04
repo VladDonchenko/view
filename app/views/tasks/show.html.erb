@@ -7,7 +7,7 @@
 		<p class="pt-5">
 		<h1><%= @task.title %></h1>
 			 <h5><%= @task.category.parent.title %> / <%= @task.category.title %></h5>
-			<h6> Замовник: <%=link_to User.find(@task.author_id).email, profile_user_path(@task.author_id) %></h6>
+			<h6> Замовник: <%=link_to User.find(@task.author_id).email, profile_user_path(@task.author_id) , :style => 'text-decoration: none; color: #188753; font-weight: bold;'%></h6>
 		</p>
 
 		<p>
